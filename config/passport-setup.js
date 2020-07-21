@@ -1,5 +1,6 @@
 const passport = require("passport")
 const GoogleStrategy = require("passport-google-oauth20")
+const AniListStrategy = require("passport-anilist/lib").Strategy
 const keys = require("./keys")
 
 passport.use(
@@ -14,3 +15,15 @@ passport.use(
         console.log(profile)
     })
 )
+/*
+passport.use(
+    new AniListStrategy({
+        callbackURL: "/auth/anilist/callback",
+        clientID: keys.aniList.clientId,
+        clientSecret: keys.aniList.clientSecret
+    }, (accessToken, refreshToken, profile, done) => {
+        // passport callback function
+        console.log("passprot callback function fired")
+        console.log(profile)
+    })
+)*/
