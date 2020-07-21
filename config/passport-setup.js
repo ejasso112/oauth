@@ -8,7 +8,9 @@ passport.use(
         callbackURL: "/auth/google/callback",
         clientID: keys.google.clientId,
         clientSecret: keys.google.clientSecret
-    }, () => {
-        // passposr callback function
+    }, (accessToken, refreshToken, profile, done) => {
+        // passport callback function
+        console.log("passprot callback function fired")
+        console.log(profile)
     })
 )
